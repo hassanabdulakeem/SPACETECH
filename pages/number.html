@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Add to Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        .cart {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 400px;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        .checkout {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .checkout:hover {
+            background-color: #218838;
+        }
+    </style>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Add to Cart</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Shop</h1>
+            <div class="products">
+                <div class="product" data-name="Product 1" data-price="20">
+                    <h2>Product 1</h2>
+                    <p>$20</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-name="Product 2" data-price="35">
+                    <h2>Product 2</h2>
+                    <p>$35</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <ul class="cart-items"></ul>
+            <p class="total">Total: $0</p>
+            <button class="checkout">Checkout</button>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const cartItems = document.querySelector(".cart-items");
+                const totalPrice = document.querySelector(".total");
+                let cart = [];
+    
+                document.querySelectorAll(".add-to-cart").forEach(button => {
+                    button.addEventListener("click", (event) => {
+                        const product = event.target.closest(".product");
+                        const name = product.dataset.name;
+                        const price = parseFloat(product.dataset.price);
+    
+                        const existingItem = cart.find(item => item.name === name);
+                        if (existingItem) {
+                            existingItem.quantity += 1;
+                        } else {
+                            cart.push({ name, price, quantity: 1 });
+                        }
+                        updateCart();
+                    });
+                });
+    
+                function updateCart() {
+                    cartItems.innerHTML = "";
+                    let total = 0;
+                    cart.forEach(item => {
+                        const li = document.createElement("li");
+                        li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+                        cartItems.appendChild(li);
+                        total += item.price * item.quantity;
+                    });
+                    totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+                }
+            });
+        </script>
+    </body>
+    </html>
+
+    <script>
+        // Number Methods
+        let num = 3.142678;
+        console.log(num);
+
+        //toFixed - return a number with the number of decimal places specified
+        console.log(num.toFixed(3));
+
+        //to a string 
+        console.log(num.toString());
+
+        //to a precision is the same with toFixed
+        console.log(num.toPrecision(4));
+        
+        // converting a string to a number
+        //Number() - convert a string to a number
+        console.log("123");
+
+        //parseInt() - converts a string to integer
+        console.log(parseInt("1342"));
+        console.log(parseInt("143wiueu"));
+        console.log(parseInt("hdh132hj"));//Not a Number
+
+        //parsefloat() - converts a string to a floating point number
+        console.log(parseFloat("3.142"));
+
+
+        //Array - collection ordered items
+        let numbers = [1,2,3,4,5]
+        
+        console.log(numbers);
+        
+        //Length 
+        console.log(numbers.length);
+
+        //Accessing elements in an arrays// ArrayName[index]
+        console.log(numbers[2]);
+        console.log(numbers[1]);
+        
+
+        //Accessing the last items in the array
+        console.log(numbers[numbers.length - 1]); //5
+
+        //we can change the number in the array
+        numbers[2] = 10;
+        console.log(numbers);
+
+        //push() - add an element to the end of the array
+        numbers.push(6)
+        console.log(numbers);
+        
+        //pop() - remove the element from the last of the array
+        numbers.pop()
+        console.log(numbers); //[1,2,10,4,5]
+
+        //shift - remove the element from the begining of the array
+        numbers.shift()
+        console.log(numbers);
+
+        //unshift - adds elements to the beginning of the array
+        numbers.unshift(20)
+        console.log(numbers);
+        
+        //converts array to a string 
+        // toString()
+        console.log(numbers.toString());
+        
+                
+        //join(It is used to seperate an array)
+        numbers.join("-")
+        console.log(numbers.join("-"));
+
+
+        //Loops in javascript
+        let cars = ["Benz","Camry","Lambo","Bugatti"]
+
+        console.log(cars[0]);
+        console.log(cars[1]);
+        console.log(cars[2]);
+        console.log(cars[3]);
+        
+        //Loops - used to perform repetitive tasks with the different values
+
+        //for loop
+
+        for(let index=1; index <= 6; index++){
+            console.log(index);
+            
+        }
+        //We can use for loops to iterate(loop) over an array
+         for(let index = 0; index <= 3; index++){
+             console.log(`car at index ${index} ${cars[index]}`);
+            
+        }
+        // for(let index = 0; index < cars.length; index++){
+        //     console.log(`car at index ${index} ${cars[index]}`);
+            
+        // }
+        
+    </script>
+</body>
+</html>

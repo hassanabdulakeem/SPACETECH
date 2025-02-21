@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat With Us</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .btn {
+            background-color: #002f6c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #f58634;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleChatOptions() {
+            let chatList = document.getElementById("chatList");
+            chatList.classList.toggle("hidden");
+        }
+        function openProfile(url) {
+            window.open(url, "_blank");
+        }
+    </script>
+</head>
+<body>
+    <button class="btn" onclick="toggleChatOptions()">Chat With Us</button>
+    <div id="chatList" class="hidden">
+        <button class="btn" onclick="openProfile('https://www.facebook.com/hassanabdulakeem')">Facebook</button>
+        <button class="btn" onclick="openProfile('https://www.tiktok.com/@devmaster2007')">TikTok</button>
+        <button class="btn" onclick="openProfile('https://www.instagram.com/dev_master_2000')">Instagram</button>
+        <button class="btn" onclick="openProfile('https://www.wa.me/+2349158030398')">WhatsApp</button>
+    </div>
+</body>
+</html>
+
+</body>
+</html>

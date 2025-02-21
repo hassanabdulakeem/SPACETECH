@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            /* display: flex; */
+            height: 100vh;
+            background-color: #f8f9fa;
+            background-image: url(./pic/A\ logo\ with\ the\ name\ SpaceTech.png);    
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 100%;
+            max-width: 100%;
+            height: 41rem;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .chat-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 50%;
+            margin: auto;
+            border: 2px solid #004d40;
+        }
+        .chat-header {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .chat-content {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333
+            /* background-color: #ccc; */
+        }
+        .chat-avatars {
+            display: flex;
+            margin-top: 10px;
+            /* margin-left: 15rem; */
+        }
+        .chat-avatars img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .chat-button {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            color: #008000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .chat-button img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            /* background-color: white; */
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+               max-width: 80%;
+               padding: 3rem;
+               line-height: 3rem;
+             
+            
+            }
+            .flex{
+                display: none;
+                
+            }
+            .chat-avatars{
+                font-size: x-small;
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="flex">
+            <div class="chat-header">
+                Live Chat
+            </div>
+           <div class="chat-avatars">
+              <img src="../image/doddle-a.svg" alt="Avatar 1">
+              <img src="../image/doddle-b.svg" alt="Avatar 2">
+              <img src="../image/doddle-c.svg" alt="Avatar 3">
+              <!-- <img src="./doddle-d.svg" alt="Avatar 4"> -->
+           </div>
+        </div>
+        <div class="chat-content">
+            <p>Urgently want to reach us?</p>
+            <p>We're available 10am - 4pm WAT, (monday-friday). (And we respond within 5 mins!)</p>
+        </div>
+       
+        <div class="chat-button" onclick="startChat()">
+            <img src="../image/eclipsed-star.svg" alt="Chat Icon"> START A CONVERSATION →
+        </div>
+    </div>
+
+    <script>
+        function startChat() {
+            alert("Starting a chat...");
+        }
+    </script>
+<br><br><br>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+        margin: 0;
+        /* margin-left: 17rem; */
+    }
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 50%;
+       margin: auto;
+    }
+    .container h2 {
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn {
+        background-color: #004d40;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #00251a;
+    }
+    @media (max-width: 480px) {
+        .container {
+            padding: 4rem;
+            max-width: 80%;
+            margin: auto;
+        }
+    }
+</style>
+</head>
+<body>
+ <div class="container">
+    <h2>Email Us</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" id="phone" placeholder="Your Phone Number">
+        </div>
+        <div class="form-group">
+            <select id="topic" required>
+                <option value="">Select a topic</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+                <option value="feedback">Feedback</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea id="message" rows="4" placeholder="Type a message..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Message</button>
+    </form>
+</div> 
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Your message has been submitted!");
+    });
+</script>
+<!-- whatsapp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Options</title>
+    <script>
+        function initiateCall() {
+            const userChoice = confirm("Do you want a video call?{OK} for Video Call, {Cancel} for Audio Call.");
+            const phoneNumber = "09158030398"; // Use your local format for direct calls
+            const whatsappNumber = "+2349158030398"; // Full international format for WhatsApp (without +)
+
+            if (userChoice) {
+                // Open WhatsApp Chat (User manually taps video call)
+                window.location.href = `https://wa.me/${whatsappNumber}`;
+            } else {
+                // Direct Audio Call (Use tel: format)
+                window.location.href = `tel:${phoneNumber}`;
+            }
+        }
+
+
+        
+    </script>
+</head>
+
+
+<script src="../javascript/practice.js"></script>
+</html>

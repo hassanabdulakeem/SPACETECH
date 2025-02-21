@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1 id="welcome-message">Hello, Guest!</h1>
+    <button id="logout">Logout</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const welcomeMessage = document.getElementById("welcome-message");
+            const userName = localStorage.getItem("loggedInUserName");
+
+            if (userName) {
+                welcomeMessage.textContent = `Hello, ${userName}!`;
+            }
+
+            // Logout button clears localStorage and redirects to login
+            document.getElementById("logout").addEventListener("click", function () {
+                localStorage.removeItem("loggedInUserName");
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+</body>
+</html>
